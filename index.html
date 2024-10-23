@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Класс 9А - Школа 106</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f9e6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background-color: #f0ad4e;
+            border-radius: 2px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .staff-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .admin-section,
+        .teacher-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .staff-info {
+            flex: 1 1 calc(33.333% - 20px);
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .staff-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .staff-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .staff-details {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            padding-top: 10px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #4caf50;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .staff-info {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .staff-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        .hero-section {
+            background-image: url('static/images/classroom.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 8px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        .info-section {
+            display: flex;
+            gap: 20px;
+        }
+
+        .info-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-text {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Добро пожаловать в школу 106</h1>
+        <p>С нами интересно учиться!</p>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h1>Школа 106</h1>
+        <p>Школа – это большая дружная семья. И, как любая семья, школа помогает вырасти своим детям достойными гражданами своей
+            страны. Школа – это необозримый мир знаний. Без них невозможно представить себе современного человека. Школа - это
+            то
+            место, где проходит важная часть нашей жизни. Здесь мы вырастаем, знакомимся, учимся преодолевать различные
+            трудности. В
+            школе мы проводим большую часть времени. Мы срастаемся с ней. Мы живем ее жизнью, а она нашей. Школа – пора
+            взросления,
+            когда закладываются нравственные и духовные ориентиры. В ней мы строим свое «Я», делаем в начале робкие, а затем
+            более
+            уверенные шаги к познанию мира и своего места в нем</p>
+        </section>
+        <section class="info-section">
+            <div class="info-text">
+                <h2>О школе 106</h2>
+                <p>Школа №106 — это образовательное учреждение с богатой историей, основанное для того, чтобы помогать
+                    ученикам достигать высоких результатов в учебе и развиваться как личности
+                    Школа №106 — это образовательное учреждение с богатой историей, которая началась более полувека
+                    назад. Она расположена в
+                    живописном районе города, окруженном зеленью парков и садов, что создает благоприятную обстановку
+                    для обучения и
+                    развития каждого ученика.
+
+                    Школа №106 предлагает широкий спектр учебных программ, охватывающих как базовые предметы, так и
+                    различные дополнительные
+                    курсы и кружки по интересам. Команда опытных и квалифицированных педагогов поощряет активное участие
+                    учеников в учебном
+                    процессе, стимулируя развитие их творческих способностей и интеллектуального потенциала.</p>
+                <p>Мы гордимся нашими учащимися и преподавателями, которые с каждым днем делают нашу школу лучше!</p>
+            </div>
+            <img src="static/images/school.jpg" alt="Школа №106">
+        </section>
+       </section>
+        <h2>Администраторы</h2>
+            <div class="admin-section">
+                <div class="staff-info">
+                    <img src="admin4.jpg" alt="Аруынов Асет Тулеулиевич" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Аруынов Асет Тулеулиевич</h3>
+                        <p>Дата рождения:29 января</p>
+                        <p>Специальность:Директор "КГУ ОШ №106".Учитель математики </p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="admin1.jpg" alt="Мусабекова Асия Бейбитовна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Мусабекова Асия Бейбитовна</h3>
+                        <p>Дата рождения:24 марта</p>
+                        <p>Стаж в должности заместителя директора 5 лет</p>
+                        <p>Заместитель директора по учебной работе</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="admin2.jpg" alt="Наурзбаева Гульмира Бляловна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Наурзбаева Гульмира Бляловна</h3>
+                        <p>Дата рождения:15 августа</p>
+                        <p>Стаж 10 лет</p>
+                        <p>Специальность: учитель казахского языка</p>
+                        <p>Должность: социальный педагог КГУ</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="admin3.jpg" alt="Келдибаева Кенжегул Стамбаевна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Келдибаева Кенжегул Ыстамбаевна</h3>
+                        <p>Дата рождения:15 июня</p>
+                        <p>Стаж 9 лет</p>
+                        <p>Специальность: учитель казахского языка</p>
+                        <p>Должность: заместитель директора по учебной работе КГУ</p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="admin5.jpg" alt="" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Азимжанова Айгуль Касымхановна</h3>
+                        <p>Дата рождения:25 июня </p>
+                        <p>Специальность: учитель биологии</p>
+                        <p>Должность: заместитель директора по учебной работе КГУ</p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="admin6.jpg" alt="" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Голикова Нелля Генриховна </h3>
+                        <p>Дата рождения:30 апреля </p>
+                        <p>Должность: заместитель директора по учебной работе КГУ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Преподаватели:</h2>
+            <p> Педагогический коллектив школы №106 постоянно совершенствует свои профессиональные навыки, участвуя
+                в различных
+                тренингах, семинарах и конференциях. Они стремятся к внедрению инновационных методик обучения, используют
+                современные
+                образовательные технологии и инструменты, чтобы сделать учебный процесс более интересным и эффективным для
+                каждого
+                ученика.
+            
+                Взаимодействие между учителями, учениками и их родителями в школе №106 строится на принципах доверия,
+                уважения и
+                партнерства. Педагоги уделяют особое внимание индивидуальным потребностям каждого ученика, помогая им
+                развивать свои
+                сильные стороны и преодолевать трудности.
+            
+                Благодаря преданности и профессионализму своих учителей, школа №106 становится не только местом обучения, но
+                и
+                вдохновляющей средой для роста и самореализации каждого ученика</p>
+            <div class="teacher-section">
+                <div class="staff-info">
+                    <img src="teacher3.jpg" alt="Шахсанам Валерьевна Вахидиновна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Валериева Шахсанам Вахидиновна</h3>
+                        <p>Дата рождения: 6 апреля</p>
+                        <p>Учитель английского языка</p>
+                        <p>Исключительно добрая учительница английского языка, заботливая и внимательная к ученикам.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher1.jpg" alt="Рушангуль Турганжановна Рахмедин" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Рушангуль Турганжановна Рахмедин</h3>
+                        <p>Дата рождения:17 августа</p>
+                        <p>Учитель по химии</p>
+                        <p>Молодой и опытный специалист, всегда готова помочь и поддержать.Ее методика обучения основана на индивидуальном подходе к каждому, что позволяет учащимся не только успешно осваивать
+                        учебный материал, но и развивать логическое мышление и навыки решения задач.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher2.jpg"Алтынбекова Райхан Аманжоловна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Алтынбекова Райхан Аманжоловна</h3>
+                        <p>Дата рождения:12 июня</p>
+                        <p>Учитель по биологии, профессионал своего дела с огромным опытом работы.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher19.jpg" alt="Ушакова Надежда Игоревна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Ушакова Надежда Игоревна</h3>
+                        <p>Дата рождения: 9 августа</p>
+                        <p>Учитель географии</p>
+                        <p>Преподаватель с яркой личностью и любовью к изучению мира.Дружелюбная и открытая, её уроки превращаются в увлекательные путешествия по планете.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher7.jpg" alt="Мелсова Айим Ерлановна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Мелсова Айим Ерлановна</h3>
+                        <p>Дата рождения: 17 июля </p>
+                        <p>Учитель истории Казахстана</p>
+                        <p>Влюбленная в историю своей страны и увлекающая учеников.Её забота и энтузиазм вдохновляют учеников на глубокое
+                        понимание прошлого.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher17.jpg" alt="Рустамова Азиза Сабыржановна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Рустамова Азиза Сабыржановна</h3>
+                        <p>Дата рождения: 27 января</p>
+                        <p>Учитель английского языка</p>
+                        <p>Учитель английского языка, опытный преподаватель с яркой энергией и любовью к литературе.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher20.jpg" alt="Ушурова Арзигуль Навердиновна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Ушурова Арзигуль Навердиновна</h3>
+                        <p>Дата рождения: 28 декабря</p>
+                        <p>Учитель английского языка</p>
+                        <p>Талантливая учительница английского языка, чья энергия и креативность превращают учебу в
+                            увлекательное приключение.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher9.jpg" alt="Алибаева Диана Рашитовна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Алибаева Диана Рашитовна</h3>
+                        <p>Дата рождения: 24 февраля</p>
+                        <p>Стаж: 9 лет</p>
+                        <p>Учитель физической культуры</p>
+                        <p>Учитель физической культуры с опытом работы 9 лет. Активная и доброжелательная, она мотивирует учеников на успех в спорте
+                        и здоровье.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher10.jpg" alt="Акимжанова Динара Кенесбековна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Акимжанова Динара Кенесбековна</h3>
+                        <p>Дата рождения: 28 март</p>
+                        <p>Стаж: 5 лет</p>
+                        <p>Учитель информатики</p>
+                        <p> Добрая и терпеливая, она с легкостью помогает ученикам освоить цифровые навыки
+                        и новые технологии.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher11.jpg" alt="Убулова Камиля Миргиясовна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Убулова Камиля Миргиясовна</h3>
+                        <p>Дата рождения: 20 мая</p>
+                        <p>Стаж: 12 лет</p>
+                        <p>Учитель английского языка</p>
+                        <p>Учитель английского языка с 12-летним стажем. Энергичная и заботливая, она вдохновляет своих учеников на глубокое
+                        изучение языка.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher12.jpg" alt="Сагинбекова Калия Оразгеновна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Сагинбекова Калия Оразгеновна</h3>
+                        <p>Дата рождения: 10 июня</p>
+                        <p>Стаж: 38 лет</p>
+                        <p>Учитель русского языка и литературы</p>
+                        <p>Учитель русского языка и литературы с опытом 38 лет. Умная и чуткая, она поддерживает учеников в их стремлениях к
+                        совершенству в языке и литературе.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher13.jpg" alt="Молдабек Айгерим Алибековна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Молдабек Айгерим Алибековна</h3>
+                        <p>Дата рождения:27 января</p>
+                        <p>Стаж: 9 лет</p>
+                        <p>Учитель английского языка</p>
+                        <p>Учитель английского языка с опытом работы 9 лет. Её доброжелательность и искреннее желание помочь делают изучение
+                        английского языка интересным и лёгким.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher14.jpg" alt="Ераулетова Айнур Сабидоллаевна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Ераулетова Айнур Сабидоллаевна</h3>
+                        <p>Дата рождения: 15 ноября </p>
+                        <p>Стаж: 5,5 года</p>
+                        <p>Учитель английского языка</p>
+                        <p>Учитель английского языка с 5,5-летним стажем. Добрая и внимательная, она всегда готова поддержать своих учеников на
+                        пути к успеху.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher15.jpg" alt="Алтынбекова Айтолкын Бахтыбековна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Алтынбекова Айтолкын Бахтыбековна</h3>
+                        <p>Дата рождения: 21 сентября</p>
+                        <p>Стаж: 6 лет</p>
+                        <p>Учитель начальных классов</p>
+                        <p>Учитель начальных классов с опытом работы 6 лет. Заботливая и добрая, она помогает маленьким ученикам делать первые шаги
+                        в учебе с уверенностью и радостью.</p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher16.jpg" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Бегилдаева Динара Капаровна</h3>
+                        <p>Дата рождения:22 февраля</p>
+                        <p>Стаж: 11 лет</p>
+                        <p>Учитель начальных классов</p>
+                        <p>Учитель начальных классов с опытом работы 11 лет. Теплая и чуткая, она всегда поддерживает своих учеников, помогая им
+                        раскрывать свои таланты.</p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="teacher99.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Халиева Динара Муратовна</h3>
+                        <p>Дата рождения: 8 мая </p>
+                        <p>Учитель начальных классов</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="teacher100.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Хожамбирова Эльмира Абдыкеримовна</h3>
+                        <p>Дата рождения: 4 августа  </p>
+                        <p>Учитель математики</p>
+                        <p></p>
+                    </div>
+                </div>
+            <div class="staff-info">
+                <img src="teacher101.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                <div class="staff-details">
+                    <h3>Нургалиева Мадина Кадыровна</h3>
+                    <p>Дата рождения: 18 март  </p>
+                    <p>Педагог-психолог</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="staff-info">
+                <img src="teacher102.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+            <div class="staff-details">
+                 <h3>Нурлан Айжан Ерзатовна</h3>
+                <p>Дата рождения:25 ноября  </p>
+                <p>Учитель казахского языка и литературы</p>
+                <p></p>
+             </div>
+        </div>
+                <div class="staff-info">
+                    <img src="teacher103.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Айткалиева Нурия Оралбаевна</h3>
+                        <p>Дата рождения:21 октября</p>
+                        <p>Учитель казахского языка и литературы</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="staff-info">
+                    <img src="teacher104.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Попова Галина Александровна</h3>
+                        <p>Дата рождения: 19 июля</p>
+                        <p>Учитель музыки </p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="staff-info">
+                    <img src="teacher105.JPG" alt="Бегилдаева Динара Капаровна" class="staff-image">
+                    <div class="staff-details">
+                        <h3>Игенбаева Жазира Куанышбековна</h3>
+                        <p>Дата рождения: 13 февраля </p>
+                        <p>Учитель казахского языка и литературы </p>
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Класс 9А. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
